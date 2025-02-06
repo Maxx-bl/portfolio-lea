@@ -1,0 +1,13 @@
+.photo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 10px; /* Space between images */
+    padding: 10px; /* Prevents touching screen edges */
+}
+
+.photo-container img {
+    width: 100%; /* Fill the grid column */
+    height: 50vh; /* Reduce height to half of the viewport */
+    object-fit: cover; /* Maintain aspect ratio and avoid distortion */
+    border-radius: 5px; /* Optional: Slightly rounded corners */
+}

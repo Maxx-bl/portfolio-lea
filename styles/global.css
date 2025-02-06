@@ -1,0 +1,70 @@
+body {
+    background-color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+p {
+    color: white;
+}
+
+.fix {
+    position: fixed;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+    width: 100vw;
+}
+
+.nav a {
+    color: white;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px black;
+}
+
+.nav a:hover {
+    color: #ffd88f
+}
+
+.nav #current {
+    color: orange;
+}
+
+@font-face {
+    font-family: 'salvegy';
+    src: url('../assets/fonts/salvegy.otf') format('opentype');
+}
+
+.floating-name {
+    position: fixed;
+    top: -60px;
+    right: 50px;
+    color: white;
+    font-family: 'salvegy';
+    font-size: 5rem;
+    padding: 10px;
+    border-radius: 8px;
+    color: orange;
+    text-shadow: 2px 2px black;
+}
+
+.content {
+    margin-top: 4rem;
+    padding: 1rem;
+}
