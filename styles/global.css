@@ -1,70 +1,145 @@
+/* General styles */
 body {
     background-color: black;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-p {
     color: white;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
-.fix {
-    position: fixed;
+body.fade-in {
+    opacity: 1;
 }
 
-.nav {
+a { 
+    text-decoration: none;
+    color: #ffbf00;
+}
+
+/* Navbar */
+.navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 10px; /* Move closer to the top */
+    left: 20px;
+    right: 20px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
-    width: 100vw;
+    z-index: 1000;
 }
 
-.nav a {
+/* Left Nav (Grouped Background) */
+.nav-left {
+    display: flex;
+    gap: 15px;
+    padding: 8px 15px; /* Reduce height */
+    background: rgba(0, 0, 0, 0.8); /* One background for all buttons */
+    backdrop-filter: blur(10px);
+    border-radius: 20px; /* Reduce roundness */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Links */
+.nav-left a {
     color: white;
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 1px 1px black;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 8px 12px; /* Reduce padding inside buttons */
 }
 
-.nav a:hover {
-    color: #ffd88f
+.nav-left a:hover {
+    color: #fee0a7;
 }
 
-.nav #current {
-    color: orange;
+#current {
+    color: #ffbf00;
+    font-weight: bold;
 }
 
 @font-face {
-    font-family: 'salvegy';
-    src: url('../assets/fonts/salvegy.otf') format('opentype');
+    font-family: 'bebasneue-reg';
+    src: url("../assets/fonts/BebasNeue-Regular.ttf");
 }
 
+/* Floating Name (No Background) */
 .floating-name {
-    position: fixed;
-    top: -60px;
-    right: 50px;
-    color: white;
-    font-family: 'salvegy';
-    font-size: 5rem;
-    padding: 10px;
-    border-radius: 8px;
-    color: orange;
+    margin-right: 100px;
+    font-size: 4rem;
+    font-family: 'bebasneue-reg';
+    color: #ffbf00;
     text-shadow: 2px 2px black;
 }
 
-.content {
-    margin-top: 4rem;
-    padding: 1rem;
+.nav-right :hover {
+    color: white;
+}
+
+/* Hamburger Menu (Hidden on PC) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 999;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #ffbf00;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-left {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .floating-name {
+        font-size: 2.5rem;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+}
+
+.close-menu {
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
