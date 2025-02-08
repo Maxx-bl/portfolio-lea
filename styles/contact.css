@@ -18,6 +18,7 @@
     justify-content: center;
     gap: 30px;
     align-items: center;
+    flex-direction: column;
 }
 
 .contact-links a {
@@ -43,7 +44,6 @@
 /* Responsive Design */
 @media (max-width: 600px) {
     .contact-links {
-        flex-direction: column;
         gap: 15px;
     }
 }
